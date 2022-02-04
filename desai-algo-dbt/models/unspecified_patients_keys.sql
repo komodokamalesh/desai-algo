@@ -6,6 +6,6 @@
 
 
 select 
-* from
+distinct upk_key2  from
 {{source('unspecified_patients', 'patients')}} 
-sample (10000 rows)
+sample (10 rows)

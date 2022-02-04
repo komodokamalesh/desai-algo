@@ -21,6 +21,12 @@ sources:
     tables:
       - name: patients
         identifier: novartis_unspecified
+  - name: patients
+    database: map_patient
+    schema: patient_summary_20220121
+    tables:
+      - name: patients_summary
+        identifier: patient_summary_ls
   - name: vocabulary
     database: map_vocabulary
     schema: public
