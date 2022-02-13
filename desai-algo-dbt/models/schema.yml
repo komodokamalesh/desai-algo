@@ -15,6 +15,14 @@ sources:
         identifier: visits_ls_ga
       - name: eligibility
         identifier: eligibilitystatus_ls_ga
+      - name: mx_lite
+        identifier: encountersmx_lite_ls_ga
+  - name: encounters
+    database: map_encounters
+    schema: rx_encounters_20220114
+    tables:
+      - name: rx
+        identifier: rx_encounter_ls_ga
   - name: unspecified_patients
     database: sandbox_komodo
     schema: entresto_soc 

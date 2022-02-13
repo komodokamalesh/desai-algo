@@ -5,7 +5,7 @@
 }}
 
 
-select * from {{ref('convert_to_dataframe')}}
+select * from {{ref('test_data_frame')}}
     unpivot(x for col_name in (CONSTANT, MALE,
       INDEX_DX_OUT,  AGE, DX_DEFIBRILLATOR,  HOSP_CHF,
       RX_ACE,  RX_ANTAGONIST, RX_BBLOCKER, RX_DIGOXIN,

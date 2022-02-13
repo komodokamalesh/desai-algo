@@ -5,6 +5,5 @@
 }}
 
 
-select 
-* from
-{{ref('model_coef_csv')}} 
+SELECT *  
+from {{ref('drug_ingredients')}}

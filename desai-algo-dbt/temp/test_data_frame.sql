@@ -7,4 +7,4 @@
 
 select 
 * from
-{{ref('model_coef_csv')}} 
+{{ref('coeffs_csv')}} 
