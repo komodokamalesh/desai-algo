@@ -4,6 +4,7 @@
   	)
 }}
 
+--map drug names to columns in data matrix
 
 SELECT
 array_construct_compact(ingredient1, ingredient2, 

@@ -4,7 +4,7 @@
   	)
 }}
 
-
+--melt dataframe to prep for matrix multiplication
 select * from {{ref('convert_to_dataframe')}}
     unpivot(x for col_name in (CONSTANT, MALE,
       INDEX_DX_OUT,  AGE, DX_DEFIBRILLATOR,  HOSP_CHF,

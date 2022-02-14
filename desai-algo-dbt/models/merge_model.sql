@@ -4,6 +4,7 @@
   	)
 }}
 
+--merge model results back into list of patients
 
 select distinct
 aa.upk_key2,

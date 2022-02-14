@@ -4,6 +4,7 @@
   	)
 }}
 
+--apply logistic transformation and thresholds to model results
 
 SELECT upk_key2,
 value,

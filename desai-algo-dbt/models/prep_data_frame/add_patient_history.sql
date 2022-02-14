@@ -63,7 +63,7 @@ PX_ARRAY_TABLE1 as (SELECT upk_key2,
        where on_index_date
        group by upk_key2),
 
---create table of aggregated dx arrays and time period 2
+--create table of aggregated px arrays and time period 2
 PX_ARRAY_TABLE2 as (SELECT upk_key2,
        array_agg (distinct F.value) AS px_array
         FROM   TIME_PERIOD_AND_CODE_ARRAYS, 
@@ -71,7 +71,7 @@ PX_ARRAY_TABLE2 as (SELECT upk_key2,
        where prior_to_index_date
        group by upk_key2),
 
---create table of aggregated dx arrays and time period 3
+--create table of aggregated px arrays and time period 3
 PX_ARRAY_TABLE3 as (SELECT upk_key2,
        array_agg (distinct F.value) AS px_array
         FROM   TIME_PERIOD_AND_CODE_ARRAYS, 
@@ -79,7 +79,7 @@ PX_ARRAY_TABLE3 as (SELECT upk_key2,
        where prior_to_index_date_plus_30
        group by upk_key2),
 
---create table of aggregated px arrays and time period 1
+--create table of aggregated rx arrays and time period 1
 NDC_ARRAY_TABLE1 as (SELECT upk_key2,
        array_agg (distinct F.value) AS ndc_array
         FROM   TIME_PERIOD_AND_CODE_ARRAYS, 
@@ -87,7 +87,7 @@ NDC_ARRAY_TABLE1 as (SELECT upk_key2,
        where on_index_date
        group by upk_key2),
 
---create table of aggregated dx arrays and time period 2
+--create table of aggregated rx arrays and time period 2
 NDC_ARRAY_TABLE2 as (SELECT upk_key2,
        array_agg (distinct F.value) AS ndc_array
         FROM   TIME_PERIOD_AND_CODE_ARRAYS, 
@@ -95,7 +95,7 @@ NDC_ARRAY_TABLE2 as (SELECT upk_key2,
        where prior_to_index_date
        group by upk_key2),
 
---create table of aggregated dx arrays and time period 3
+--create table of aggregated rx arrays and time period 3
 NDC_ARRAY_TABLE3 as (SELECT upk_key2,
        array_agg (distinct F.value) AS ndc_array
         FROM   TIME_PERIOD_AND_CODE_ARRAYS, 
