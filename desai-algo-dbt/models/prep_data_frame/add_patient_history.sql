@@ -27,7 +27,8 @@ left join {{source('encounters', 'rx')}} rx
 on a.upk_key2=rx.upk_key2
 where (e.claim_date between '2018-06-01' and '2020-07-31')
 and (rx.claim_date between '2018-06-01' and '2020-07-31')
-and (on_index_date or prior_to_index_date or prior_to_index_date_plus_30)),
+and (on_index_date or prior_to_index_date or prior_to_index_date_plus_30)
+and hf_incident_date is not null),
 
 
 --create table of aggregated dx arrays and time period 1
@@ -136,6 +137,7 @@ left join NDC_ARRAY_TABLE2 as ndc2
 on ndc2.upk_key2=a.upk_key2
 left join NDC_ARRAY_TABLE3 as ndc3
 on ndc3.upk_key2=a.upk_key2
+where a.hf_incident_date is not null
 
 
 

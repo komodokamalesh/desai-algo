@@ -7,7 +7,7 @@
 --formats algo codes into a table of arrays by type
 
 select * 
-    from (select code as code_value,category from {{ ref('claims_codes') }} )
+    from (select distinct code as code_value,category from {{ ref('claims_codes') }} )
      pivot(array_agg(code_value) for category in ('HF','HF_SYSTOLIC',
 'HF_DIASTOLIC',
 'HF_LEFT',

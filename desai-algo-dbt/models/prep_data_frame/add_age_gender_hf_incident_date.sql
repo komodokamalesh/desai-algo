@@ -13,8 +13,8 @@ u.upk_key2,
 e.claim_date,
 e.visit_id,
 e.encounter_key,
-array_compact(array_construct(DA,D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17,D18,D19,
-D20,D21,D22,D23,D24,D25,D26,diagnosis_e_code_1,diagnosis_e_code_2)) as dx_array,
+array_construct_compact(DA,D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17,D18,D19,
+D20,D21,D22,D23,D24,D25,D26,diagnosis_e_code_1,diagnosis_e_code_2) as dx_array,
 arrays_overlap(dx_array, (select HF from {{ref('claims_codes_table')}})) as hf_incident
 from 
 {{ref('unspecified_patients_keys')}} u
@@ -30,7 +30,7 @@ upk_key2,
 claim_date as hf_incident_date,
 encounter_key,
 visit_id
-FROM (SELECT *, ROW_NUMBER () OVER(PARTITION BY upk_key2 ORDER BY claim_date ASC) AS rn
+FROM (SELECT *, ROW_NUMBER () OVER(PARTITION BY upk_key2 ORDER BY claim_date DESC) AS rn
 FROM HF_INCIDENT_FLAG
 ) WHERE rn = 1),
 
